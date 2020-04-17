@@ -12,7 +12,8 @@ module.exports = {
   addTask,
   getTaskById,
   updateTask,
-  deleteTask
+  deleteTask,
+  getTaskContext
 };
 
 function getTasks() {
@@ -29,6 +30,10 @@ function getTaskById(id) {
     .where({
       id
     })
+}
+
+function getTaskContext(id) {
+  
 }
 
 function updateTask(changes, id) {
