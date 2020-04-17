@@ -34,4 +34,21 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.put('/:id', (req, res) => {
+  Projects.getProjectById(id)
+    .then(project => {
+      if(project) {
+        Projects.updateProject(req.body, req.params.id)
+          .then(updatedProject => {
+            res.json(updatedProject)
+          });
+      } else {
+        res.status(404).json({ message: 'Project by given id was not found' });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({ message: 'Failed to update the project.' })
+    }); 
+});
+
 module.exports = router;
