@@ -8,9 +8,15 @@ const myKnex = require('knex')({
 const db = require('../data/db-config');
 
 module.exports = {
-  getProjects
+  getProjects,
+  addProjects
 };
 
 function getProjects() {
   return db('projects')
+}
+
+function addProjects(data) {
+  return db('projects')
+    .insert(data);
 }
