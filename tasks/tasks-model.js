@@ -9,7 +9,8 @@ const db = require('../data/db-config');
 
 module.exports = {
   getTasks,
-  addTask
+  addTask,
+  getTaskById
 };
 
 function getTasks() {
@@ -19,4 +20,11 @@ function getTasks() {
 function addTask(data) {
   return db('tasks')
     .insert(data)
+}
+
+function getTaskById(id) {
+  return db('tasks')
+    .where({
+      id
+    })
 }

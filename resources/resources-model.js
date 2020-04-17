@@ -9,7 +9,8 @@ const db = require('../data/db-config');
 
 module.exports = {
   getResources,
-  addResource
+  addResource,
+  getResourceById
 };
 
 function getResources() {
@@ -19,4 +20,11 @@ function getResources() {
 function addResource(data) {
   return db('resources')
     .insert(data)
+}
+
+function getResourceById(id) {
+  return db('resources')
+    .where({
+      id
+    })
 }

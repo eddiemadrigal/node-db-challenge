@@ -24,4 +24,14 @@ router.post('/', (req, res) => {
   })
 });
 
+router.get('/:id', (req, res) => {
+  Resources.getResourceById(req.params.id) 
+    .then(resources => {
+      res.json(resources);
+    })
+    .catch( error => {
+      res.status(500).json({ message: 'Failed to get the specific id' });
+    });
+});
+
 module.exports = router;

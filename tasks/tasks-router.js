@@ -20,8 +20,18 @@ router.post('/', (req, res) => {
     res.status(201).json(tasks)
   })
   .catch(error => {
-    res.status(500).json({ message: 'Failed to create a new task' })
+    res.status(500).json({ message: 'Failed to create a new task ...' })
   })
+});
+
+router.get('/:id', (req, res) => {
+  Tasks.getTaskById(req.params.id)
+    .then(tasks => {
+      res.json(tasks);
+    })
+    .catch( error => {
+      res.status(500).json({ message: 'Failed to get the specific task ...' });
+    });
 });
 
 module.exports = router;

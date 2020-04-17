@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
       res.json(projects);
     })
     .catch( error => {
-      res.status(500).json({ message: 'Failed to get a list of projects ...' });
+      res.status(500).json({ message: 'Failed to get the specific id ...' });
     });
 });
 
