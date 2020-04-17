@@ -18,7 +18,7 @@ module.exports = {
 
 function getTasks() {
   return db('tasks')
-}
+} fi
 
 function addTask(data) {
   return db('tasks')
@@ -32,9 +32,19 @@ function getTaskById(id) {
     })
 }
 
+/*
+
+select c.name
+from context c
+join context_task ct on ct.context_id = c.id
+join tasks t on t.id = ct.task_id
+where t.id = 2
+
+*/
+
 function getTaskContext(id) {
-  
-}
+
+}l
 
 function updateTask(changes, id) {
   return db('tasks')
