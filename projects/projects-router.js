@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  Projects.getProjectById(id)
+  Projects.getProjectById(req.params.id)
     .then(project => {
       if(project) {
         Projects.updateProject(req.body, req.params.id)

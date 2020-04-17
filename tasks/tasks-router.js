@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.put('/:id', (req, res) => {
-  Tasks.getTaskById(id)
+  Tasks.getTaskById(req.params.id)
     .then(task => {
       if(task) {
         Tasks.updateTask(req.body, req.params.id)
