@@ -24,4 +24,14 @@ router.post('/', (req, res) => {
   })
 });
 
+router.get('/:id', (req, res) => {
+  Projects.getProjectById(req.params.id) 
+    .then(projects => {
+      res.json(projects);
+    })
+    .catch( error => {
+      res.status(500).json({ message: 'Failed to get a list of projects ...' });
+    });
+});
+
 module.exports = router;

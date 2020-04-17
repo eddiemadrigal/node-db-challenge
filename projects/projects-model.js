@@ -9,11 +9,19 @@ const db = require('../data/db-config');
 
 module.exports = {
   getProjects,
-  addProjects
+  addProjects,
+  getProjectById
 };
 
 function getProjects() {
   return db('projects')
+}
+
+function getProjectById(id) {
+  return db('projects')
+    .where({
+      id
+    })
 }
 
 function addProjects(data) {
