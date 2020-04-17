@@ -5,12 +5,12 @@ const Projects = require('./projects-model');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  Projects.getResources()
-    .then(resources => {
-      res.json(resources);
+  Projects.getProjects() 
+    .then(projects => {
+      res.json(projects);
     })
     .catch( error => {
-      res.status(500).json({ message: 'Failed to get resources ...' });
+      res.status(500).json({ message: 'Failed to get a list of projects ...' });
     });
 });
 

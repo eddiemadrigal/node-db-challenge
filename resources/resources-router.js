@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
       res.json(resources);
     })
     .catch( error => {
-      res.status(500).json({ message: 'Failed to get resources ...' });
+      res.status(500).json({ message: 'Failed to get a list of resources ...' });
     });
 });
 
