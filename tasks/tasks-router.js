@@ -34,6 +34,16 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.get('/:id/context', (req, res) => {
+  Tasks.getTaskContext(req.params.id)
+    .then(taskContext => {
+      res.json(taskContext);
+    })
+    .catch( error => {
+      res.status(500).json({ message: 'Failed to get the specific task ...' });
+    });
+});
+
 router.put('/:id', (req, res) => {
   Tasks.getTaskById(req.params.id)
     .then(task => {
