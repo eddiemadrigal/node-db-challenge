@@ -29,12 +29,22 @@ exports.up = function(knex) {
       tbl.string('project_id', 255);
       tbl.string('resource_id', 255);
     })
-    
+    .createTable('context', tbl => {
+      tbl.string('id', 255).primary();
+      tbl.string('name', 255).notNullable();
+    })
+    .createTable('context_task', tbl => {
+      tbl.string('context_id', 255);
+      tbl.string('task_id', 255);
+    })
 };
 
 exports.down = function(knex) {
   return knex.schema
-    .dropTableIfExists('dishes')
-    .dropTableIfExists('ingredients')
-    .dropTableIfExists('steps')
+  .dropTableIfExists('projects_resources')
+  .dropTableIfExists('projects')
+  .dropTableIfExists('tasks')
+  .dropTableIfExists('resources')
+  .dropTableIfExists('context_task')
+  .dropTableIfExists('context')
 };
