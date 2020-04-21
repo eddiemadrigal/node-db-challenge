@@ -40,11 +40,19 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 - [ ] Explain the difference between `Relational Databases` and `SQL`.
 
+Structured Query Language (SQL) is a query languaged used to communicate with SQL relational databases while relational databases hold the data that can be retrieved through the use of the SQL language. 'Select * from users' is an example of the SQL language that is used in this case to select everything from a table called users.  The 'users' table, though, is a table found in a relational database.
+
 - [ ] Why do tables need a `primary key`?
+
+Primary keys in a table help keep records organized.  When the data found in a table is given a primary key, only relevant data directly associated with the primary key should be contained in the table.  Primary keys can also be indexed so that relevant data needed by an SQL query string can be retrieved a lot faster.  Through the use of primary keys, data is maintained organized and unduplicated which helps maintain database normalization.
 
 - [ ] What is the name given to a table column that references the primary key on another table.
 
+Foreign key
+
 - [ ] What do we need in order to have a _many to many_ relationship between two tables.
+
+Foreign keys are need in a many-to-many relationship (or lookup) table. The foreign keys found in this type of table will match the primary keys of the tables needing to relate to each other.  For example, a company with many departments with many executives will likely have a many-to-many table that helps sort what departments are overseen by which executives.
 
 ## Minimum Viable Product
 
